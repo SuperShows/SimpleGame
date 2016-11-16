@@ -1,25 +1,25 @@
 var namespace = "http://www.w3.org/2000/svg"
 
-var position = 550;
+var positionX = 200;
 document.addEventListener("keydown", function(e) {
  if(e.keyCode == 37){
-   position -=10;
-   document.getElementById("fly").setAttribute("x", position)
+   positionX -=10;
+   document.getElementById("fly").setAttribute("x", positionX)
  }
  else if (e.keyCode == 39) {
-   position +=10;
-   document.getElementById("fly").setAttribute("x", position)
+   positionX +=10;
+   document.getElementById("fly").setAttribute("x", positionX)
  }
 })
 
-var position = 250;
+var positionY = 60;
 document.addEventListener("keydown", function(e) {
  if(e.keyCode == 40){
-   position +=10;
-   document.getElementById("fly").setAttribute("y", position)
+   positionY+=10;
+   document.getElementById("fly").setAttribute("y", positionY)
  }
  else if (e.keyCode == 38) {
-   position -=10;
-   document.getElementById("fly").setAttribute("y", position)
+   positionY -=10;
+   document.getElementById("fly").setAttribute("y", positionY)
  }
 })
