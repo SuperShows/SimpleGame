@@ -7,7 +7,11 @@
   </head>
   <body>
     <svg id="bird" width="96%" height="96%" viewBox="0 0 400 200">
-  <image id="fly" x="200" y="60" width="40" height="40" xlink:href="http://piskel-imgstore-b.appspot.com/img/7c4d20f3-ac2d-11e6-a070-edac77a77283.gif"/>
+  <image id="fly" x="200" y="60" width="40" height="40" xlink:href="http://piskel-imgstore-b.appspot.com/img/94664f1e-acf6-11e6-a064-3bbe6c6458c4.gif"/>
+  <images id="food" x="140" y="60" width="20" height="20" xlink:href="http://piskel-imgstore-b.appspot.com/img/da27184c-ac32-11e6-9901-edac77a77283.gif">
+    <animate id="up" attributeName = "y" from = "10" to = "140" dur = "5s" begin="0s; down.end"/>
+    <animate id="down" attributeName = "y" from = "140" to = "10" dur = "5s" "up.end"/>
+  </image>
     </svg>
   </body>
   <script src="game.js"></script>
