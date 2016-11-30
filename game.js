@@ -1,5 +1,11 @@
 var namespace = "http://www.w3.org/2000/svg"
 
+function randomNumber(min,max)
+{
+ return Math.floor(Math.random()*(max-min+1)+min);
+}
+
+
 var positionX = 200;
 document.addEventListener("keydown", function(e) {
  if(e.keyCode == 37){
