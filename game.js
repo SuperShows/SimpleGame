@@ -1,5 +1,17 @@
 var namespace = "http://www.w3.org/2000/svg"
 
+var foodEaten = 0;
+
+var positionX = 550;
+var positionY = 250;
+var foodY;
+var foodX;
+var width = 20;
+var height = 20;
+var message = "";
+
+var namespace = "http://www.w3.org/2000/svg"
+
 function randomNumber(min,max)
 {
  return Math.floor(Math.random()*(max-min+1)+min);
@@ -7,6 +19,7 @@ function randomNumber(min,max)
 
 
 var positionX = 200;
+var positionY = 60;
 document.addEventListener("keydown", function(e) {
  if(e.keyCode == 37){
    positionX -=10;
@@ -16,16 +29,24 @@ document.addEventListener("keydown", function(e) {
    positionX +=10;
    document.getElementById("fly").setAttribute("x", positionX)
  }
-})
 
-var positionY = 60;
-document.addEventListener("keydown", function(e) {
  if(e.keyCode == 40){
    positionY+=10;
    document.getElementById("fly").setAttribute("y", positionY)
- }
+  }
  else if (e.keyCode == 38) {
    positionY -=10;
    document.getElementById("fly").setAttribute("y", positionY)
- }
+  }
+
+  foodY = Number(document.getElementById("food").getAttribute("y"))
+  foodX = Number(document.getElementById("food").getAttribute("x"))
+
+  if(positionX > foodX - width && positionX < foodX + width && positionY >foodY - height && positionY < foodY + height) {
+    console.log("LIT")
+    document.getElementById("food").setAttribute("x", randomNumber(0, 150))
+    foodEaten = foodEaten + 1
+    document.getElementById("scoreboard").textContent = foodEaten
+   }
+
 })
