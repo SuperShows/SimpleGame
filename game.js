@@ -44,9 +44,19 @@ document.addEventListener("keydown", function(e) {
 
   if(positionX > foodX - width && positionX < foodX + width && positionY >foodY - height && positionY < foodY + height) {
     console.log("LIT")
-    document.getElementById("food").setAttribute("x", randomNumber(0, 150))
+    document.getElementById("food").setAttribute("x", randomNumber(0, 350))
     foodEaten = foodEaten + 1
     document.getElementById("scoreboard").textContent = foodEaten
    }
+
+   foodX = Number(document.getElementById("food2").getAttribute("x"))
+   foodY = Number(document.getElementById("food2").getAttribute("y"))
+
+   if(positionX > foodX - width && positionX < foodX + width && positionY >foodY - height && positionY < foodY + height) {
+     console.log("LIT")
+     document.getElementById("food2").setAttribute("x", randomNumber(0, 350))
+     foodEaten = foodEaten + 1
+     document.getElementById("scoreboard").textContent = foodEaten
+    }
 
 })
